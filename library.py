@@ -26,6 +26,10 @@ class DNASequence(str):
         table = str.maketrans("ACGT", "TGCA")
         return DNASequence(self.translate(table)[::-1])
 
+class Fasta():
+    def __init__(self, id: str, sequence: DNASequence):
+        self.id = id
+        self.sequence = sequence
 
 class AminoAcidSequence(str):
     """A validated single-letter IUPAC amino acid string."""
